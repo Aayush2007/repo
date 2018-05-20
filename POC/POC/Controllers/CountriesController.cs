@@ -35,40 +35,40 @@ namespace POC.Controllers
             return Ok(country);
         }
 
-        //// PUT: api/Countries/5
-        //[ResponseType(typeof(void))]
-        //public IHttpActionResult PutCountry(int id, Country country)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
+        // PUT: api/Countries/5
+        [ResponseType(typeof(void))]
+        public IHttpActionResult PutCountry(int id, Country country)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-        //    if (id != country.Id)
-        //    {
-        //        return BadRequest();
-        //    }
+            if (id != country.Id)
+            {
+                return BadRequest();
+            }
 
-        //    db.Entry(country).State = EntityState.Modified;
+            db.Entry(country).State = EntityState.Modified;
 
-        //    try
-        //    {
-        //        db.SaveChanges();
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        if (!CountryExists(id))
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CountryExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
-        //    return StatusCode(HttpStatusCode.NoContent);
-        //}
+            return StatusCode(HttpStatusCode.NoContent);
+        }
 
         //// POST: api/Countries
         //[ResponseType(typeof(Country))]
