@@ -16,60 +16,62 @@ namespace POC.Controllers
     {
         private ContextClass db = new ContextClass();
 
-        // GET: api/Users
-        public IQueryable<User> Getusers()
-        {
-            return db.users;
-        }
+        //// GET: api/Users
+        //public IQueryable<User> Getusers()
+        //{
+        //    return db.users;
+        //}
 
-        // GET: api/Users/5
-        [ResponseType(typeof(User))]
-        public IHttpActionResult GetUser(int id)
-        {
-            User user = db.users.Find(id);
-            if (user == null)
-            {
-                return NotFound();
-            }
+        //// GET: api/Users/5
+        //[ResponseType(typeof(User))]
+        //public IHttpActionResult GetUser(int id)
+        //{
+        //    User user = db.users.Find(id);
+        //    if (user == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return Ok(user);
-        }
+        //    return Ok(user);
+        //}
 
-        // PUT: api/Users/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutUser(int id, User user)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //// PUT: api/Users/5
+        //[ResponseType(typeof(void))]
+        //public IHttpActionResult PutUser(int id, User user)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            if (id != user.userId)
-            {
-                return BadRequest();
-            }
+        //    if (id != user.userId)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            db.Entry(user).State = EntityState.Modified;
+        //    db.Entry(user).State = EntityState.Modified;
 
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UserExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    try
+        //    {
+        //        db.SaveChanges();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!UserExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            return StatusCode(HttpStatusCode.NoContent);
-        }
+        //    return StatusCode(HttpStatusCode.NoContent);
+        //}
 
+
+        // for registration purpose.
         // POST: api/Users
         [ResponseType(typeof(User))]
         public IHttpActionResult PostUser(User user)
@@ -77,6 +79,14 @@ namespace POC.Controllers
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
+            }
+
+            foreach(User u in db.users)
+            {
+                if(u.userName == user.userName)
+                {
+                    return Ok("UserName already exists");
+                }
             }
 
             db.users.Add(user);
