@@ -1,3 +1,18 @@
-<p>
-  helpdesk-display works!
-</p>
+<div>
+  <table class="table table-hover table-bordered">
+    <tr>
+      <td>First Name</td>
+      <td>Last Name</td>
+      <td>Age</td>
+      <td>Country</td>
+      <td>UserName</td>
+    </tr>
+    <tr *ngFor = "let detail of details">
+      <td>{{detail.fName}}</td>
+      <td>{{detail.lName}}</td>
+      <td>{{detail.age}}</td>
+      <td>{{detail.country}}</td>
+      <td>{{detail.userName}}</td>
+    </tr>
+  </table>
+</div>

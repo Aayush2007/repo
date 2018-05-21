@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserDetails } from '../../models/details';
 
 @Component({
   selector: 'app-helpdesk-display',
@@ -7,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelpdeskDisplayComponent implements OnInit {
 
-  constructor() { }
-
+  details: UserDetails[];
+  constructor() {
+    this.details = [new UserDetails("Aayush","Singh",21,"India","admin")];
+   }
+  
   ngOnInit() {
   }
 
