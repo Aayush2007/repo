@@ -10,7 +10,7 @@ export class HelpdeskDisplayComponent implements OnInit {
 
   details: UserDetails[];
   constructor() {
-    this.details = [new UserDetails("Aayush","Singh",21,"India","admin")];
+    this.details = [new UserDetails("Aayush","Singh",21,"India","admin","qwerty123")];
    }
   
   ngOnInit() {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormControl,Validators } from '@angular/forms';
+import { Login } from '../../models/login';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
 		});
   }
 
-  onlogin(){
+  onlogin({ value, valid }: { value: Login, valid: boolean }){
+    console.log("UserName: "+value.userName +", Password: "+value.Password);
     
   }
   

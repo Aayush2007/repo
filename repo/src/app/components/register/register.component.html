@@ -1,37 +1,62 @@
+<div style="width:400px;margin-left: auto;">
 <h1>Register</h1>
 
 <form name="register" [formGroup] ="register" (submit)="registerSubmit()" novalidate>
   <div class="form-group">
-    <label for="">First Name</label>
+    <label for="fName">First Name</label>
     <input type="text" class="form-control" formControlName="fName" id="fName" name="fName">
+    <div class="error"  *ngIf="register.get('fName').hasError('required') && register.get('fName').touched">
+      Enter your First Name.
+    </div>
   </div>
 
   <div class="form-group">
-    <label for="">Last Name</label>
+    <label for="lname">Last Name</label>
     <input type="text" class="form-control" formControlName="lname" id="lname" name="lname">
+    <div class="error"  *ngIf="register.get('lname').hasError('required') && register.get('lname').touched">
+      Enter your Last Name.
+    </div>
   </div>
 
   <div class="form-group">
-    <label for="">Age</label>
+    <label for="age">Age</label>
     <input type="number" class="form-control" formControlName="age" id="age" name="age">
+    <div class="error"  *ngIf="register.get('age').hasError('required') && register.get('age').touched">
+      Enter your Last Name.
+    </div>
+    <div class="error"  *ngIf="register.get('age').hasError('min') && register.get('age').touched">
+      Age can't be zero.
+    </div>
   </div>
 
   <div class="form-group">
-    <label for="">Country</label>
+    <label for="country">Country</label>
     <select  class="form-control" id="countryId" formControlName="countryId" name="countryId">
       <option></option>
       <option *ngFor="let c of country" [value]="c.id">{{c.name}}</option>
     </select>
+    <div class="error"  *ngIf="register.get('countryId').hasError('required') && register.get('countryId').touched">
+      Select a Country.
+    </div>
   </div>
 
   <div class="form-group">
     <label for="">Username</label>
     <input type="text" class="form-control" formControlName="userName" id="userName" name="userName">
+    <div class="error"  *ngIf="register.get('userName').hasError('required') && register.get('userName').touched">
+      Enter a User Name.
+    </div>
   </div>
 
   <div class="form-group">
     <label for="">Password</label>
     <input type="text" class="form-control" formControlName="password" id="password" name="password">
+    <div class="error"  *ngIf="register.get('password').hasError('required') && register.get('password').touched">
+      Enter a Password.
+    </div>
+    <div class="error"  *ngIf="register.get('password').hasError('minLength') && register.get('password').touched">
+      Password must contain minimum 8 characters.
+    </div>
   </div>
 
   <div class="form-group">
@@ -40,8 +65,12 @@
       <option [value]="user">User</option>
       <option [value]="helpDesk">Helpdesk</option>      
     </select>
+    <div class="error"  *ngIf="register.get('role').hasError('required') && register.get('role').touched">
+      Enter your Role.
+    </div>
   </div>
 
-  <button class="btn btn-primary" [disabled]=!register.valid >Submit</button>
-  <a routerLink="/login" style="margin-left: 15px;">Already have an Account?</a>
+  <button class="btn btn-primary" disabled= !register.valid >Submit</button>
+  <a href="/login" style="margin-left: 15px;">Already have an Account?</a>
 </form>
+</div>

@@ -22,7 +22,7 @@ namespace POC.Models
         public int Age { get; set; }
 
         [Required]
-        public int cId { get; set; }
+        public int countryId { get; set; }
 
         [Required]
         public int uId { get; set; }
