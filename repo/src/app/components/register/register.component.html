@@ -1,3 +1,45 @@
-<p>
-  register works!
-</p>
+<h1>Register</h1>
+
+<form name="register" [formGroup] ="register" (submit)="registerSubmit()" novalidate>
+  <div class="form-group">
+    <label for="">First Name</label>
+    <input type="text" class="form-control" formControlName="fName" id="fNmame">
+  </div>
+
+  <div class="form-group">
+    <label for="">Last Name</label>
+    <input type="text" class="form-control" formControlName="lname" id="lname">
+  </div>
+
+  <div class="form-group">
+    <label for="">Age</label>
+    <input type="number" class="form-control" formControlName="age" id="age">
+  </div>
+
+  <div class="form-group">
+    <label for="">Country</label>
+    <select class="form-control" id="countryId" formControlName="countryId">
+      <option  *ngFor="let c of country" [value]="c.id">{{c.name}}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="">Username</label>
+    <input type="text" class="form-control" formControlName="userName" id="userName">
+  </div>
+
+  <div class="form-group">
+    <label for="">Password</label>
+    <input type="text" class="form-control" formControlName="password" id="password">
+  </div>
+
+  <div class="form-group">
+    <label for="">Role</label>
+    <select class="form-control" id="role" formControlName="role">
+      <option [value]="user">User</option>
+      <option [value]="helpDesk">Helpdesk</option>      
+    </select>
+  </div>
+
+  <button class="btn btn-primary">Submit</button>
+</form>
