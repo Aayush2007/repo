@@ -1,6 +1,6 @@
-<div class="row">
-  <div>
-  <table class="table table-hover table-bordered">
+<div class="col" style="width:1200px;">
+
+  <table class="table table-hover table-bordered" style="background-color: whitesmoke; width: 50%;">
     <tr>
       <td>First Name</td>
       <td>Last Name</td>
@@ -16,12 +16,22 @@
       <td>{{detail.age}}</td>
       <td>{{detail.country}}</td>
       <td>{{detail.userName}}</td>
-      <td><button>Update</button></td>
-      <td><button (click)="delete(detail.userName)">Delete</button></td>
+      <td><button class="btn btn-default" (click)="toggle();fname.value=detail.fName;lname.value=detail.lName;age.value=detail.age;country.value=detail.country;uname.value=detail.userName;">Update</button></td>
+      <td><button class="btn btn-default" (click)="delete(detail.userName)">Delete</button></td>
     </tr>
   </table>
-  </div>
-  <div id="update">
-    <label>First Name</label>
+  <div>
+    <form id="update" class="col-md-4" [hidden]= show style="background-color: aliceblue;">
+    <div><label>First Name: </label> <input class="form-control" type="text"  name="fname" #fname/></div>
+    <div><label>Last Name: </label> <input class="form-control" type="text" name="lname" #lname/></div>
+    <div><label>Age: </label> <input class="form-control" type="text"  name="age" #age/></div>
+    <div><label>Country: </label> <input class="form-control" type="text"  name="country" #country/></div>
+    <div><label>UserName: </label><input class="form-control" type="text" name = "uname" #uname disabled/></div>
+    <br>
+    <div>
+      <button class="btn btn-primary" (click)="update(fname.value,lname.value,age.value,country.value,uname.value)">Update</button>
+      <button class="btn btn-primary" (click)="toggle()">Cancel</button>
+    </div>
+  </form>
   </div>
 </div>
