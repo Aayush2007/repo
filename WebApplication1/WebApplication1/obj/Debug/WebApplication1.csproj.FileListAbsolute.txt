@@ -318,3 +318,5 @@ C:\Users\amrkharb\Desktop\folder\WebApplication1\WebApplication1\obj\Debug\WebAp
 C:\Users\amrkharb\Desktop\folder\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csproj.CopyComplete
 C:\Users\amrkharb\Desktop\folder\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\amrkharb\Desktop\folder\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\amrkharb\Desktop\folder\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.remove.resources
+C:\Users\amrkharb\Desktop\folder\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.remov.resources

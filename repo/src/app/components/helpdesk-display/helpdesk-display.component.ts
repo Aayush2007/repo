@@ -11,7 +11,7 @@ export class HelpdeskDisplayComponent implements OnInit {
 
   details: UserDetails[];
   constructor(private api:ApiserviceService) {
-    this.details = [new UserDetails("Aayush","Singh",21,"India","admin","qwerty123")];
+    this.details = [new UserDetails("Aayush","Singh",21,"India","admin","qwerty123","helpDesk")];
    }
   
   ngOnInit() {

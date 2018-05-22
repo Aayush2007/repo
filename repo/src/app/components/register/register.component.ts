@@ -25,13 +25,13 @@ export class RegisterComponent implements OnInit {
 
   registerForm = () => {
     this.register = new FormGroup({
-      fName: new FormControl('', [Validators.required]),
-      lname: new FormControl('', [Validators.required]),
-      age: new FormControl('', [Validators.required,Validators.min(1)]),
-      countryId: new FormControl('', [Validators.required]),
-      userName: new FormControl('', [Validators.required]),
-      password: new FormControl('', [Validators.required,Validators.minLength(3)]),
-      role: new FormControl('', [Validators.required])
+      FName: new FormControl('', [Validators.required]),
+      LName: new FormControl('', [Validators.required]),
+      Age: new FormControl('', [Validators.required,Validators.min(1)]),
+      Country: new FormControl('', [Validators.required]),
+      UserName: new FormControl('', [Validators.required]),
+      Password: new FormControl('', [Validators.required,Validators.minLength(3)]),
+      Role: new FormControl('', [Validators.required])
     });
   }
  
@@ -46,7 +46,7 @@ export class RegisterComponent implements OnInit {
   }
 
   registerSubmit({value}: { value:UserDetails}){
-    console.log(value);
+    this.api.addUser(value).subscribe(response => console.log(response),error=>console.error(error),()=>{});
     this.router.navigateByUrl('/login');
   }
 }

@@ -1,3 +1,11 @@
 export class UserDetails{
-    constructor(public fName:string,public lName:string,public age:number,public country:string,public userName:string,public Password:string){}
+    constructor(
+        public FName:string,
+        public LName:string,
+        public Age:number,
+        public Country:string,
+        public UserName:string,
+        public Password:string,
+        public Role:string
+    ){}
 }
