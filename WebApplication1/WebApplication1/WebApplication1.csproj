@@ -208,6 +208,14 @@
     <Compile Include="Migrations\201805220655252_hell.Designer.cs">
       <DependentUpon>201805220655252_hell.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805220834300_remove.cs" />
+    <Compile Include="Migrations\201805220834300_remove.Designer.cs">
+      <DependentUpon>201805220834300_remove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805220836145_remov.cs" />
+    <Compile Include="Migrations\201805220836145_remov.Designer.cs">
+      <DependentUpon>201805220836145_remov.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContextClass.cs" />
     <Compile Include="Models\Country.cs" />
@@ -291,6 +299,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805220655252_hell.resx">
       <DependentUpon>201805220655252_hell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805220834300_remove.resx">
+      <DependentUpon>201805220834300_remove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805220836145_remov.resx">
+      <DependentUpon>201805220836145_remov.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

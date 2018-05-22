@@ -3,69 +3,69 @@
 
 <form name="register" [formGroup] ="register" (ngSubmit)="registerSubmit(register)" novalidate>
   <div class="form-group">
-    <label for="fName">First Name</label>
-    <input type="text" class="form-control" formControlName="fName" id="fName" name="fName">
-    <div class="error"  *ngIf="register.get('fName').hasError('required') && register.get('fName').touched">
+    <label for="FName">First Name</label>
+    <input type="text" class="form-control" formControlName="FName" id="FName" name="FName">
+    <div class="error"  *ngIf="register.get('FName').hasError('required') && register.get('FName').touched">
       Enter your First Name.
     </div>
   </div>
 
   <div class="form-group">
-    <label for="lname">Last Name</label>
-    <input type="text" class="form-control" formControlName="lname" id="lname" name="lname">
-    <div class="error"  *ngIf="register.get('lname').hasError('required') && register.get('lname').touched">
+    <label for="LName">Last Name</label>
+    <input type="text" class="form-control" formControlName="LName" id="LName" name="LName">
+    <div class="error"  *ngIf="register.get('LName').hasError('required') && register.get('LName').touched">
       Enter your Last Name.
     </div>
   </div>
 
   <div class="form-group">
-    <label for="age">Age</label>
-    <input type="number" class="form-control" formControlName="age" id="age" name="age">
-    <div class="error"  *ngIf="register.get('age').hasError('required') && register.get('age').touched">
+    <label for="Age">Age</label>
+    <input type="number" class="form-control" formControlName="Age" id="Age" name="Age">
+    <div class="error"  *ngIf="register.get('Age').hasError('required') && register.get('Age').touched">
       Enter your Last Name.
     </div>
-    <div class="error"  *ngIf="register.get('age').hasError('min') && register.get('age').touched">
+    <div class="error"  *ngIf="register.get('Age').hasError('min') && register.get('Age').touched">
       Age can't be zero.
     </div>
   </div>
 
   <div class="form-group">
     <label for="country">Country</label>
-    <select  class="form-control" id="countryId" formControlName="countryId" name="countryId">
+    <select  class="form-control" id="Country" formControlName="Country" name="Country">
       <option></option>
       <option *ngFor="let c of country">{{c.CountryName}}</option>
     </select>
-    <div class="error"  *ngIf="register.get('countryId').hasError('required') && register.get('countryId').touched">
+    <div class="error"  *ngIf="register.get('Country').hasError('required') && register.get('Country').touched">
       Select a Country.
     </div>
   </div>
 
   <div class="form-group">
     <label for="">Username</label>
-    <input type="text" class="form-control" formControlName="userName" id="userName" name="userName">
-    <div class="error"  *ngIf="register.get('userName').hasError('required') && register.get('userName').touched">
+    <input type="text" class="form-control" formControlName="UserName" id="UserName" name="UserName">
+    <div class="error"  *ngIf="register.get('UserName').hasError('required') && register.get('UserName').touched">
       Enter a User Name.
     </div>
   </div>
 
   <div class="form-group">
     <label for="">Password</label>
-    <input type="password" class="form-control" formControlName="password" id="password" name="password">
-    <div class="error"  *ngIf="register.get('password').hasError('required') && register.get('password').touched">
+    <input type="Password" class="form-control" formControlName="Password" id="Password" name="Password">
+    <div class="error"  *ngIf="register.get('Password').hasError('required') && register.get('Password').touched">
       Enter a Password.
     </div>
-    <div class="error"  *ngIf="register.get('password').hasError('minLength') && register.get('password').touched">
-      Password must contain minimum 8 characters.
+    <div class="error"  *ngIf="register.get('Password').hasError('minLength') && register.get('Password').touched">
+      Password must contain minimum 3 characters.
     </div>
   </div>
 
   <div class="form-group">
-    <label for="role">Role</label>
-    <select class="form-control" id="role" formControlName="role" name="role">
+    <label for="Role">Role</label>
+    <select class="form-control" id="Role" formControlName="Role" name="Role">
       <option></option>
       <option *ngFor="let r of rol">{{r}}</option>    
     </select>
-    <div class="error"  *ngIf="register.get('role').hasError('required') && register.get('role').touched">
+    <div class="error"  *ngIf="register.get('Role').hasError('required') && register.get('Role').touched">
       Enter your Role.
     </div>
   </div>

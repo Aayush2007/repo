@@ -31,6 +31,6 @@ namespace WebApplication1.Models
         public int Age { get; set; }
 
         [Required]
-        public int Country { get; set; }
+        public string Country { get; set; }
     }
 }
