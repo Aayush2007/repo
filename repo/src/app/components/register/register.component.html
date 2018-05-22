@@ -1,7 +1,7 @@
 <div style="width:400px;margin-left: auto;">
 <h1>Register</h1>
 
-<form name="register" [formGroup] ="register" (submit)="registerSubmit()" novalidate>
+<form name="register" [formGroup] ="register" (ngSubmit)="registerSubmit(register)" novalidate>
   <div class="form-group">
     <label for="fName">First Name</label>
     <input type="text" class="form-control" formControlName="fName" id="fName" name="fName">
@@ -33,7 +33,7 @@
     <label for="country">Country</label>
     <select  class="form-control" id="countryId" formControlName="countryId" name="countryId">
       <option></option>
-      <option *ngFor="let c of country">{{c.countryName}}</option>
+      <option *ngFor="let c of country">{{c.CountryName}}</option>
     </select>
     <div class="error"  *ngIf="register.get('countryId').hasError('required') && register.get('countryId').touched">
       Select a Country.
@@ -50,7 +50,7 @@
 
   <div class="form-group">
     <label for="">Password</label>
-    <input type="text" class="form-control" formControlName="password" id="password" name="password">
+    <input type="password" class="form-control" formControlName="password" id="password" name="password">
     <div class="error"  *ngIf="register.get('password').hasError('required') && register.get('password').touched">
       Enter a Password.
     </div>
@@ -60,17 +60,17 @@
   </div>
 
   <div class="form-group">
-    <label for="">Role</label>
+    <label for="role">Role</label>
     <select class="form-control" id="role" formControlName="role" name="role">
-      <option [value]="user">User</option>
-      <option [value]="helpDesk">Helpdesk</option>      
+      <option></option>
+      <option *ngFor="let r of rol">{{r}}</option>    
     </select>
     <div class="error"  *ngIf="register.get('role').hasError('required') && register.get('role').touched">
       Enter your Role.
     </div>
   </div>
 
-  <button class="btn btn-primary" disabled= !register.valid >Submit</button>
+  <button class="btn btn-primary" [disabled]= !register.valid>Submit</button>
   <a href="/login" style="margin-left: 15px;">Already have an Account?</a>
 </form>
 </div>

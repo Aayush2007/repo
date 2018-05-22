@@ -7,11 +7,13 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using POC.Models;
 
 namespace POC.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class UserDetailsController : ApiController
     {
         private ContextClass db = new ContextClass();
@@ -87,9 +89,10 @@ namespace POC.Controllers
 
         // DELETE: api/UserDetails/5
         [ResponseType(typeof(UserDetails))]
-        public IHttpActionResult DeleteUserDetails(int id)
+        [Route("api/deleteuser")]
+        public IHttpActionResult DeleteUserDetails(string userName)
         {
-            UserDetails userDetails = db.details.Find(id);
+            UserDetails userDetails = db.details.Find(userName);
             if (userDetails == null)
             {
                 return NotFound();

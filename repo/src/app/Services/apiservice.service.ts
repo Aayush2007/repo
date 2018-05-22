@@ -11,8 +11,12 @@ export class ApiserviceService {
     private http: Http
   ) { }
 
-  getCountry():Observable<any[]>{
-    return this.http.get("http://localhost:49829/api/countries").map(this.extractData);
+  getCountry():Observable<any>{
+    return this.http.get("http://localhost:62411/api/countries").map(this.extractData);
+  }
+
+  deleteUser(userName:string):Observable<any>{
+    return this.http.get("http://localhost:49829/api/deleteuser/"+ userName).map(this.extractData);
   }
 
   extractData(res:Response){

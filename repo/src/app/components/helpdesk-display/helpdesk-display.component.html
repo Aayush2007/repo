@@ -1,4 +1,5 @@
-<div>
+<div class="row">
+  <div>
   <table class="table table-hover table-bordered">
     <tr>
       <td>First Name</td>
@@ -6,6 +7,8 @@
       <td>Age</td>
       <td>Country</td>
       <td>UserName</td>
+      <td>Update</td>
+      <td>Delete</td>
     </tr>
     <tr *ngFor = "let detail of details">
       <td>{{detail.fName}}</td>
@@ -13,6 +16,12 @@
       <td>{{detail.age}}</td>
       <td>{{detail.country}}</td>
       <td>{{detail.userName}}</td>
+      <td><button>Update</button></td>
+      <td><button (click)="delete(detail.userName)">Delete</button></td>
     </tr>
   </table>
+  </div>
+  <div id="update">
+    <label>First Name</label>
+  </div>
 </div>
