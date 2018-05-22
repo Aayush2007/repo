@@ -33,7 +33,7 @@
     <label for="country">Country</label>
     <select  class="form-control" id="countryId" formControlName="countryId" name="countryId">
       <option></option>
-      <option *ngFor="let c of country" [value]="c.id">{{c.name}}</option>
+      <option *ngFor="let c of country">{{c.countryName}}</option>
     </select>
     <div class="error"  *ngIf="register.get('countryId').hasError('required') && register.get('countryId').touched">
       Select a Country.

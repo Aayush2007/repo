@@ -13,14 +13,12 @@ export class RegisterComponent implements OnInit {
   register : FormGroup;
   country: any;
 
-  constructor(
-    private api : ApiserviceService,
-    private router: Router
-  ) { }
-
-  ngOnInit() {
+  constructor(private api : ApiserviceService,private router: Router){
     this.registerForm();
     this.getCountry();
+   }
+
+  ngOnInit() {
   }
 
   registerForm = () => {
@@ -35,8 +33,14 @@ export class RegisterComponent implements OnInit {
     });
   }
  
-  getCountry = () => {
-    this.api.getCountry().subscribe(res => this.country = res);
+  getCountry(){
+    console.log("aaya");
+    this.api.getCountry().subscribe(
+      response => this.country = response,
+      error=>console.error(error),
+      ()=>{
+        console.log(this.country);
+      });
   }
 
   registerSubmit = () => {
